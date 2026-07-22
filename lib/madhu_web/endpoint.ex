@@ -7,7 +7,7 @@ defmodule MadhuWeb.Endpoint do
   @session_options [
     store: :cookie,
     key: "_madhu_key",
-    signing_salt: "JyoSKkDF",
+    signing_salt: "lN3x0OKk",
     same_site: "Lax"
   ]
 
@@ -30,6 +30,8 @@ defmodule MadhuWeb.Endpoint do
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.
   if code_reloading? do
+    socket "/phoenix/live_reload/socket", Phoenix.LiveReloader.Socket
+    plug Phoenix.LiveReloader
     plug Phoenix.CodeReloader
     plug Phoenix.Ecto.CheckRepoStatus, otp_app: :madhu
   end
